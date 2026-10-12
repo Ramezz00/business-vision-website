@@ -1,5 +1,5 @@
 /*
-  Tailwind is only used by the About / Industries / Products pages.
+  Tailwind is only used by the About / Industries / Products / Solutions / Contact pages.
   It is limited to those files so it never touches the Home page styles.
 */
 @layer theme, base, components, utilities;
@@ -12,6 +12,8 @@
 @source "./pages/IndustryDetail.tsx";
 @source "./pages/Products.tsx";
 @source "./pages/ProductDetail.tsx";
+@source "./pages/Solution.tsx";
+@source "./pages/Contact.tsx";
 @source "./components";
 
 @layer base {

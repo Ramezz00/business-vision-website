@@ -2,11 +2,13 @@ import { useEffect } from 'react'
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { NotFound } from './components/NotFound'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import Home, { Footer, Header } from './pages/Home'
 import Industries from './pages/Industries'
 import IndustryDetail from './pages/IndustryDetail'
 import ProductDetail from './pages/ProductDetail'
 import Products from './pages/Products'
+import Solutions from './pages/Solution'
 
 function Layout() {
   const { pathname, hash } = useLocation()
@@ -46,6 +48,8 @@ export default function App() {
         <Route index element={<Home />} />
         <Route element={<InnerPage />}>
           <Route path="about" element={<About />} />
+          <Route path="solutions" element={<Solutions />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="industries" element={<Industries />} />
           <Route path="industries/:slug" element={<IndustryDetail />} />
           <Route path="products" element={<Products />} />

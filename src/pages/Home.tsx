@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   {
     label: 'Solutions',
-    href: '/#solutions',
+    href: '/solutions',
   },
   {
     label: 'Products',
@@ -351,7 +351,7 @@ interface FooterLink {
 
 const footerExplore: FooterLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Solutions', href: '/#solutions' },
+  { label: 'Solutions', href: '/solutions' },
   { label: 'Products', href: '/products' },
   { label: 'Industries', href: '/industries' },
   { label: 'About', href: '/about' },
@@ -510,7 +510,7 @@ function Hero() {
           <Link to="/contact" className="btn btn--primary">
             Get Started <ArrowRight />
           </Link>
-          <Link to="/#solutions" className="btn btn--ghost">
+          <Link to="/solutions" className="btn btn--ghost">
             Explore Solutions <ArrowRight />
           </Link>
         </div>

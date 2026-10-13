@@ -270,79 +270,79 @@ const products: Product[] = [
   },
 ]
 
-interface Testimonial {
-  name: string
-  role: string
-  quote: string
-  avatar: string
-}
+// interface Testimonial {
+//   name: string
+//   role: string
+//   quote: string
+//   avatar: string
+// }
 
-const testimonials: Testimonial[] = [
-  {
-    name: 'Sarah Mitchell',
-    role: 'Chief Financial Officer',
-    quote:
-      '“Business Vision helped us streamline our\noperations with intelligent solutions that\nimproved efficiency and supported better\ndecision-making across our organization.”',
-    avatar: '/avatars/sarah.png',
-  },
-  {
-    name: 'David Anderson',
-    role: 'IT Director',
-    quote:
-      "“The team's expertise and collaborative\napproach made our digital transformation\njourney smooth, structured, and focused on\nmeasurable business outcomes.”",
-    avatar: '/avatars/david.png',
-  },
-  {
-    name: 'Michael Carter',
-    role: 'Operations Manager',
-    quote:
-      '“From planning to deployment, every stage\nwas delivered with professionalism,\ntransparency, and a clear understanding of our\nbusiness objectives.”',
-    avatar: '/avatars/michael.png',
-  },
-  // Demo testimonials: replace with real client feedback
-  {
-    name: 'Layla Hassan',
-    role: 'Head of Analytics',
-    quote:
-      '“Their dashboards gave our leadership\nteam clear visibility into performance\nand helped us act on insights\nmuch faster than before.”',
-    avatar: '/avatars/sarah.png',
-  },
-  {
-    name: 'Omar Khalil',
-    role: 'Chief Technology Officer',
-    quote:
-      '“From architecture to delivery, the team\nbuilt a scalable platform that grew\nwith our business without\ncompromising security.”',
-    avatar: '/avatars/david.png',
-  },
-  {
-    name: 'Nadia Farouk',
-    role: 'Data Governance Lead',
-    quote:
-      '“Their governance framework gave us\ntrusted data across departments and\nmade compliance reporting far\nless time consuming.”',
-    avatar: '/avatars/sarah.png',
-  },
-  {
-    name: 'James Walker',
-    role: 'VP of Operations',
-    quote:
-      '“Automation delivered by Business Vision\nsimplified our workflows and freed our\nteams to focus on strategic work.”',
-    avatar: '/avatars/michael.png',
-  },
-  {
-    name: 'Mona Ibrahim',
-    role: 'Finance Director',
-    quote:
-      '“The forecasting solution improved our\nplanning accuracy and gave us confidence\nin every financial decision we make.”',
-    avatar: '/avatars/sarah.png',
-  },
-  {
-    name: 'Karim Adel',
-    role: 'Project Manager',
-    quote:
-      '“A reliable partner with a clear process\nand continuous support after launch.\nEvery milestone was delivered\non time.”',
-    avatar: '/avatars/david.png',
-  },
-]
+// const testimonials: Testimonial[] = [
+//   {
+//     name: 'Sarah Mitchell',
+//     role: 'Chief Financial Officer',
+//     quote:
+//       '“Business Vision helped us streamline our\noperations with intelligent solutions that\nimproved efficiency and supported better\ndecision-making across our organization.”',
+//     avatar: '/avatars/sarah.png',
+//   },
+//   {
+//     name: 'David Anderson',
+//     role: 'IT Director',
+//     quote:
+//       "“The team's expertise and collaborative\napproach made our digital transformation\njourney smooth, structured, and focused on\nmeasurable business outcomes.”",
+//     avatar: '/avatars/david.png',
+//   },
+//   {
+//     name: 'Michael Carter',
+//     role: 'Operations Manager',
+//     quote:
+//       '“From planning to deployment, every stage\nwas delivered with professionalism,\ntransparency, and a clear understanding of our\nbusiness objectives.”',
+//     avatar: '/avatars/michael.png',
+//   },
+//   // Demo testimonials: replace with real client feedback
+//   {
+//     name: 'Layla Hassan',
+//     role: 'Head of Analytics',
+//     quote:
+//       '“Their dashboards gave our leadership\nteam clear visibility into performance\nand helped us act on insights\nmuch faster than before.”',
+//     avatar: '/avatars/sarah.png',
+//   },
+//   {
+//     name: 'Omar Khalil',
+//     role: 'Chief Technology Officer',
+//     quote:
+//       '“From architecture to delivery, the team\nbuilt a scalable platform that grew\nwith our business without\ncompromising security.”',
+//     avatar: '/avatars/david.png',
+//   },
+//   {
+//     name: 'Nadia Farouk',
+//     role: 'Data Governance Lead',
+//     quote:
+//       '“Their governance framework gave us\ntrusted data across departments and\nmade compliance reporting far\nless time consuming.”',
+//     avatar: '/avatars/sarah.png',
+//   },
+//   {
+//     name: 'James Walker',
+//     role: 'VP of Operations',
+//     quote:
+//       '“Automation delivered by Business Vision\nsimplified our workflows and freed our\nteams to focus on strategic work.”',
+//     avatar: '/avatars/michael.png',
+//   },
+//   {
+//     name: 'Mona Ibrahim',
+//     role: 'Finance Director',
+//     quote:
+//       '“The forecasting solution improved our\nplanning accuracy and gave us confidence\nin every financial decision we make.”',
+//     avatar: '/avatars/sarah.png',
+//   },
+//   {
+//     name: 'Karim Adel',
+//     role: 'Project Manager',
+//     quote:
+//       '“A reliable partner with a clear process\nand continuous support after launch.\nEvery milestone was delivered\non time.”',
+//     avatar: '/avatars/david.png',
+//   },
+// ]
 
 interface FooterLink {
   label: string
@@ -359,10 +359,10 @@ const footerExplore: FooterLink[] = [
 
 const footerCompany: FooterLink[] = [
   { label: 'Who we are?', href: '/about#who-we-are' },
-  { label: 'Leadership& Team', href: '/about' },
-  { label: 'Business Vision& ALKAN', href: '/about' },
+  { label: 'Leadership & Team', href: '/about' },
+  { label: 'Business Vision & ALKAN', href: '/about' },
   { label: 'Case Studies', href: '/#testimonials' },
-  { label: 'Security& Governance', href: '/#why' },
+  // { label: 'Security & Governance', href: '/#why' },
   { label: 'Book a Discovery Session', href: '/contact' },
 ]
 
@@ -754,64 +754,64 @@ function Products() {
 }
 
 // ---------- Testimonials ----------
-const PER_PAGE = 3
-const pages = Array.from({ length: Math.ceil(testimonials.length / PER_PAGE) }, (_, i) =>
-  testimonials.slice(i * PER_PAGE, i * PER_PAGE + PER_PAGE),
-)
+// const PER_PAGE = 3
+// const pages = Array.from({ length: Math.ceil(testimonials.length / PER_PAGE) }, (_, i) =>
+//   testimonials.slice(i * PER_PAGE, i * PER_PAGE + PER_PAGE),
+// )
 
-function Testimonials() {
-  const [page, setPage] = useState(0)
-  const go = (next: number) => setPage((next + pages.length) % pages.length)
+// function Testimonials() {
+//   const [page, setPage] = useState(0)
+//   const go = (next: number) => setPage((next + pages.length) % pages.length)
 
-  return (
-    <section id="testimonials" className="testimonials" aria-labelledby="testimonials-title">
-      <h2 id="testimonials-title" className="section-title">
-        WHAT OUR CLIENTS SAY
-      </h2>
+//   return (
+//     <section id="testimonials" className="testimonials" aria-labelledby="testimonials-title">
+//       <h2 id="testimonials-title" className="section-title">
+//         WHAT OUR CLIENTS SAY
+//       </h2>
 
-      <div className="slider" aria-live="polite">
-        <div className="slider__track" style={{ transform: `translateX(-${page * 100}%)` }}>
-          {pages.map((group, i) => (
-            <ul
-              key={i}
-              className="testimonials__grid slider__page"
-              aria-hidden={i !== page}
-              inert={i !== page}
-            >
-              {group.map((item) => (
-                <li key={item.name} className="testimonial">
-                  <img className="testimonial__avatar" src={item.avatar} alt={item.name} />
-                  <h3>{item.name}</h3>
-                  <blockquote>{item.quote}</blockquote>
-                  <div className="testimonial__foot">
-                    <img className="testimonial__mark" src="/icons/quote.png" alt="" />
-                    <p>{item.role}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
+//       <div className="slider" aria-live="polite">
+//         <div className="slider__track" style={{ transform: `translateX(-${page * 100}%)` }}>
+//           {pages.map((group, i) => (
+//             <ul
+//               key={i}
+//               className="testimonials__grid slider__page"
+//               aria-hidden={i !== page}
+//               inert={i !== page}
+//             >
+//               {group.map((item) => (
+//                 <li key={item.name} className="testimonial">
+//                   <img className="testimonial__avatar" src={item.avatar} alt={item.name} />
+//                   <h3>{item.name}</h3>
+//                   <blockquote>{item.quote}</blockquote>
+//                   <div className="testimonial__foot">
+//                     <img className="testimonial__mark" src="/icons/quote.png" alt="" />
+//                     <p>{item.role}</p>
+//                   </div>
+//                 </li>
+//               ))}
+//             </ul>
+//           ))}
+//         </div>
+//       </div>
 
-      <div className="pager">
-        <button type="button" className="pager__btn" aria-label="Previous testimonials" onClick={() => go(page - 1)}>
-          <svg viewBox="0 0 10 16" className="pager__arrow" aria-hidden="true">
-            <path d="M8 2L2.5 8L8 14" />
-          </svg>
-        </button>
-        <span className="pager__track" style={{ '--i': page } as CSSProperties}>
-          <span className="pager__bar" />
-        </span>
-        <button type="button" className="pager__btn" aria-label="Next testimonials" onClick={() => go(page + 1)}>
-          <svg viewBox="0 0 10 16" className="pager__arrow" aria-hidden="true">
-            <path d="M2 2L7.5 8L2 14" />
-          </svg>
-        </button>
-      </div>
-    </section>
-  )
-}
+//       <div className="pager">
+//         <button type="button" className="pager__btn" aria-label="Previous testimonials" onClick={() => go(page - 1)}>
+//           <svg viewBox="0 0 10 16" className="pager__arrow" aria-hidden="true">
+//             <path d="M8 2L2.5 8L8 14" />
+//           </svg>
+//         </button>
+//         <span className="pager__track" style={{ '--i': page } as CSSProperties}>
+//           <span className="pager__bar" />
+//         </span>
+//         <button type="button" className="pager__btn" aria-label="Next testimonials" onClick={() => go(page + 1)}>
+//           <svg viewBox="0 0 10 16" className="pager__arrow" aria-hidden="true">
+//             <path d="M2 2L7.5 8L2 14" />
+//           </svg>
+//         </button>
+//       </div>
+//     </section>
+//   )
+// }
 
 // ---------- CallToAction ----------
 function CallToAction() {
@@ -917,7 +917,7 @@ export default function Home() {
       <Process />
       <Industries />
       <Products />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CallToAction />
     </>
   )

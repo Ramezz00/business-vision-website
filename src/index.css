@@ -1150,7 +1150,7 @@ body {
 }
 
 .footer__tagline {
-  font-size: clamp(0.85rem, 1.35vw, 1.6rem);
+  font-size: 20px;
   line-height: 1.43;
   margin-top: 0.17vw;
 }
@@ -1158,7 +1158,7 @@ body {
 .footer__desc {
   margin-top: 0.4vw;
   font-family: var(--font);
-  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
   white-space: pre-line;

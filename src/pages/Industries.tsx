@@ -200,15 +200,15 @@ const industryCards: {
   Icon: () => ReactNode;
   bullets: string[];
 }[] = [
-  { key: "banking", name: "Banking & Financial Services", color: "#1D4FFF", bg: "#E6EEFF", Icon: BankIcon, bullets: ["regulatory compliance", "financial reporting", "risk management", "fraud detection"] },
-  { key: "health", name: "Healthcare", color: "#12B21A", bg: "#E3F8E5", Icon: HeartIcon, bullets: ["patient data management", "compliance", "operational efficiency", "performance reporting"] },
-  { key: "manufactur", name: "Manufacturing", color: "#F59A1B", bg: "#FFF3E0", Icon: FactoryIcon, bullets: ["production visibility", "supply chain optimization", "operational efficiency", "quality control"] },
-  { key: "retail", name: "Retail & E-Commerce", color: "#E5469A", bg: "#FFEDF6", Icon: CartIcon, bullets: ["customer behavior", "sales forcasting", "inventory optimization", "omnichannel insight"] },
-  { key: "government", name: "Government & Public Sector", color: "#1D4FFF", bg: "#E6EEFF", Icon: GovIcon, bullets: ["digital transformation", "data governance", "performance transparency", "citizen services"] },
-  { key: "energy", name: "Energy & Utilities", color: "#F8C21B", bg: "#FFF6CC", Icon: BoltIcon, bullets: ["asset monitoring", "performance optimization", "regulatory reporting", "energy management"] },
-  { key: "telecom", name: "Telecommunication", color: "#12B21A", bg: "#E3F8E5", Icon: AntennaIcon, bullets: ["network performance", "customer experience", "service monitoring", "fault prediction"] },
-  { key: "education", name: "Education", color: "#C8239E", bg: "#FBEFFB", Icon: CapIcon, bullets: ["student performance", "resource management", "digital learning", "institutional reporting"] },
-  { key: "food", name: "Food and Beverage", color: "#3C5FD6", bg: "#E6EEFF", Icon: BurgerIcon, bullets: ["smart inventory", "demand forecasting", "supply optimization", "quality assurance"] },
+  { key: "banking", name: "Banking", color: "#1D4FFF", bg: "#E6EEFF", Icon: () => <img src="/icons/ind-banking.png" alt="" />, bullets: ["regulatory compliance", "financial reporting", "risk management", "fraud detection"] },
+  { key: "health", name: "Healthcare", color: "#12B21A", bg: "#E3F8E5", Icon: () => <img src="/icons/ind-healthcare.png" alt="" />, bullets: ["patient data management", "compliance", "operational efficiency", "performance reporting"] },
+  { key: "manufactur", name: "Manufacturing", color: "#F59A1B", bg: "#FFF3E0", Icon: () => <img src="/icons/ind-manufacturing.png" alt="" />, bullets: ["production visibility", "supply chain optimization", "operational efficiency", "quality control"] },
+  { key: "retail", name: "Retail", color: "#E5469A", bg: "#FFEDF6", Icon: () => <img src="/icons/ind-retail.png" alt="" />, bullets: ["customer behavior", "sales forcasting", "inventory optimization", "omnichannel insight"] },
+  { key: "government", name: "Government", color: "#1D4FFF", bg: "#E6EEFF", Icon: () => <img src="/icons/ind-government.png" alt="" />, bullets: ["digital transformation", "data governance", "performance transparency", "citizen services"] },
+  // { key: "energy", name: "Energy & Utilities", color: "#F8C21B", bg: "#FFF6CC", Icon: BoltIcon, bullets: ["asset monitoring", "performance optimization", "regulatory reporting", "energy management"] },
+  { key: "telecom", name: "Telecom", color: "#12B21A", bg: "#E3F8E5", Icon: () => <img src="/icons/ind-telecom.png" alt="" />, bullets: ["network performance", "customer experience", "service monitoring", "fault prediction"] },
+  // { key: "education", name: "Education", color: "#C8239E", bg: "#FBEFFB", Icon: CapIcon, bullets: ["student performance", "resource management", "digital learning", "institutional reporting"] },
+  { key: "food", name: "Oil and Gas", color: "#3C5FD6", bg: "#E6EEFF", Icon: () => <img src="/icons/ind-oilgas.png" alt="" />, bullets: ["smart inventory", "demand forecasting", "supply optimization", "quality assurance"] },
 ];
 
 const capabilities: { title: string; text: string; Icon: () => ReactNode }[] = [

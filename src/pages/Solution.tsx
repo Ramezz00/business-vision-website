@@ -107,7 +107,7 @@ const industries = [
   "Telecommunications",
   "Manufacturing",
   "Oil and Gas",
-  "Real Estate",
+  // "Real Estate",
   "Pharmaceutical",
   "Government",
   "Financial Services",
@@ -116,13 +116,13 @@ const industries = [
 
 // Technology logos. Each logo file has different empty space around it,
 // so each one gets its own display height to look the same size on the page.
-const techStack = [
-  { file: "power-bi.png", name: "Power BI", width: 180, height: 100, className: "h-[88px]" },
-  { file: "sql-server.png", name: "Microsoft SQL Server", width: 209, height: 55, className: "h-[50px]" },
-  { file: "dotnet.png", name: "Microsoft .NET", width: 177, height: 100, className: "h-[92px]" },
-  { file: "react.png", name: "React", width: 178, height: 100, className: "h-[88px]" },
-  { file: "ibm-planning-analytics.png", name: "IBM Planning Analytics", width: 140, height: 78, className: "h-[66px]" },
-];
+// const techStack = [
+//   { file: "power-bi.png", name: "Power BI", width: 180, height: 100, className: "h-[88px]" },
+//   { file: "sql-server.png", name: "Microsoft SQL Server", width: 209, height: 55, className: "h-[50px]" },
+//   { file: "dotnet.png", name: "Microsoft .NET", width: 177, height: 100, className: "h-[92px]" },
+//   { file: "react.png", name: "React", width: 178, height: 100, className: "h-[88px]" },
+//   { file: "ibm-planning-analytics.png", name: "IBM Planning Analytics", width: 140, height: 78, className: "h-[66px]" },
+// ];
 
 function SparkleIcon() {
   return (
@@ -334,29 +334,29 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <ul className={`grid grid-cols-2 gap-3 sm:grid-cols-3 ${OPEN_SANS}`}>
-            {industries.map((industry, index) => {
-              const isLast = index === industries.length - 1;
-              const spanTwo = isLast && industries.length % 3 === 2;
-              return (
-                <li
-                  key={industry}
-                  className={`flex min-h-[56px] items-center justify-center gap-2.5 rounded-md border border-slate-100 bg-[#f8f9fc] px-4 py-3 text-center text-base font-medium text-slate-600 sm:text-lg ${
-                    spanTwo ? "sm:col-span-2" : ""
-                  }`}
-                >
-                  <span className="shrink-0 text-[#1d5bff]">
-                    <SparkleIcon />
-                  </span>
-                  {industry}
-                </li>
-              );
-            })}
-          </ul>
+          <ul className={`grid grid-cols-2 gap-3 sm:grid-cols-2 ${OPEN_SANS}`}>
+  {industries.map((industry) => {
+    const spanTwo = industry === "Food and Beverage";
+
+    return (
+      <li
+        key={industry}
+        className={`flex min-h-[56px] items-center justify-center gap-2.5 rounded-md border border-slate-100 bg-[#f8f9fc] px-4 py-3 text-center text-base font-medium text-slate-600 sm:text-lg ${
+          spanTwo ? "col-span-2" : ""
+        }`}
+      >
+        <span className="shrink-0 text-[#1d5bff]">
+          <SparkleIcon />
+        </span>
+        {industry}
+      </li>
+    );
+  })}
+</ul>
         </div>
       </section>
 
-      <section className="bg-[#f7faf2] py-16 md:py-20">
+      {/* <section className="bg-[#f7faf2] py-16 md:py-20">
         <div className="container-x">
           <div className="text-center">
             <p className="text-lg font-semibold uppercase text-[#1d5bff] md:text-xl">Technology Stack</p>
@@ -380,7 +380,7 @@ export default function SolutionsPage() {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       <section className="relative isolate overflow-hidden bg-[#06142e]">
         {/* object-fill stretches the image to the banner's shape so both glowing lines stay visible */}
@@ -406,12 +406,12 @@ export default function SolutionsPage() {
             >
               Book a Discovery Session
             </Link>
-            <Link
+            {/* <Link
               to="/contact"
               className="inline-flex min-h-[56px] items-center justify-center rounded-lg border-2 border-[#4aa9e0] bg-[#0b1f3f]/70 px-7 text-sm font-bold uppercase text-[#4aa9e0] transition hover:bg-[#0b1f3f]"
             >
               Discuss Your Business Needs
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

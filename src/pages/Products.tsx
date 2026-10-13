@@ -298,7 +298,7 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
       </section>
 
       {/* ============ Section 2: Comparison table ============ */}
-      <section className="py-16" style={{ backgroundColor: "#F8FCF1" }}>
+      {/* <section className="py-16" style={{ backgroundColor: "#F8FCF1" }}>
         <div className="container-x">
           <div className="text-center">
             <p className="text-lg font-medium uppercase" style={{ color: BLUE }}>
@@ -348,10 +348,10 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ============ Section 3: Why choose ============ */}
-      <section className="bg-white py-16">
+      <section className="bg-[#f7faf2] py-16">
         <div className="container-x">
           <div className="text-center">
             <p className="text-lg font-medium uppercase" style={{ color: BLUE }}>

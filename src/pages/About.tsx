@@ -196,13 +196,13 @@ export default function AboutPage() {
 
           {/* Collage: proportions follow the design; sizes use container units so it scales as one piece */}
           <div className="@container relative mx-auto aspect-[392/315] w-full max-w-[640px]">
-            <div className="absolute right-0 top-[2.5%] h-[97%] w-[44%] overflow-hidden rounded-[1.2cqw] shadow-lg">
-              <img src="/images/about/puzzle.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute right-0 top-[2.5%] h-[90%] w-[100%] overflow-hidden rounded-[1.2cqw] shadow-lg">
+              <img src="/Assets/Hand holding a luminous blue puzzle piece.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
-            <div className="absolute bottom-[5.5%] left-0 aspect-video w-[54%] overflow-hidden rounded-[1.2cqw] shadow-lg">
+            {/* <div className="absolute bottom-[5.5%] left-0 aspect-video w-[54%] overflow-hidden rounded-[1.2cqw] shadow-lg">
               <img src="/images/about/ai-hand.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover" />
-            </div>
-            <div className="absolute left-[10.7%] top-0 flex h-[52%] w-[38%] flex-col justify-center rounded-[1.8cqw] bg-white px-[3.5cqw] pb-[1cqw] shadow-[0_2cqw_6cqw_rgba(0,0,0,0.12)]">
+            </div> */}
+            {/* <div className="absolute left-[10.7%] top-0 flex h-[52%] w-[38%] flex-col justify-center rounded-[1.8cqw] bg-white px-[3.5cqw] pb-[1cqw] shadow-[0_2cqw_6cqw_rgba(0,0,0,0.12)]">
               <div className="flex items-center justify-between">
                 <p className="text-[3.8cqw] font-normal leading-none text-[#0B0B45]">30,000+</p>
                 <TrendIcon />
@@ -225,7 +225,9 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-          </div>        </div>
+          </div> */}
+          </div>
+                  </div>
       </section>
 
       {/* ============ Stats ============ */}
@@ -306,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============ Management ============ */}
-      <section className="py-16" style={{ backgroundColor: DARK_BG }}>
+      {/* <section className="py-16" style={{ backgroundColor: DARK_BG }}>
         <div className="container-x grid items-start gap-10 lg:grid-cols-[1fr_1.15fr]">
           <div>
             <p className="text-xl font-medium uppercase" style={{ color: NUM_BLUE }}>
@@ -345,40 +347,61 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ============ Get in touch ============ */}
-      <section className="relative overflow-hidden py-20" style={{ backgroundColor: "#071A3D" }}>
-        <iframe
-          title="Business Vision location"
-          src="https://maps.google.com/maps?q=29.9588446,31.3146013&z=16&output=embed"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[150%] w-full border-0 opacity-60 [filter:grayscale(1)_invert(0.92)_hue-rotate(180deg)_contrast(0.9)]"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          tabIndex={-1}
+      <section
+  className="relative overflow-hidden py-16"
+  style={{ backgroundColor: "#071A3D" }}
+>
+  <iframe
+    title="Business Vision location"
+    src="https://maps.google.com/maps?q=29.9588446,31.3146013&z=16&output=embed"
+    className="pointer-events-none absolute inset-x-0 top-0 h-[150%] w-full border-0 opacity-60 [filter:grayscale(1)_invert(0.92)_hue-rotate(180deg)_contrast(0.9)]"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    tabIndex={-1}
+    aria-hidden="true"
+  />
+
+  <div
+    className="absolute inset-0 bg-[#071A3D]/40"
+    aria-hidden="true"
+  />
+
+  <div className="container-x relative">
+    <Link
+      to="/contact"
+      className="mx-auto flex max-w-[480px] items-center justify-between gap-3 rounded-full border-2 bg-[#071A3D]/70 px-4 py-2 transition-colors hover:bg-[#0B2352]/80 sm:px-5"
+      style={{ borderColor: BLUE }}
+    >
+      <span
+        className="text-lg font-medium uppercase sm:text-xl"
+        style={{ color: BLUE }}
+      >
+        Get in touch
+      </span>
+
+      <span
+        className="flex h-9 w-14 shrink-0 items-center justify-center rounded-full border-2 sm:w-16"
+        style={{ borderColor: BLUE, color: BLUE }}
+      >
+        <svg
+          viewBox="0 0 48 24"
+          className="h-5 w-8"
           aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-[#071A3D]/40" aria-hidden="true" />
-        <div className="container-x relative">
-          <Link
-            to="/contact"
-            className="mx-auto flex max-w-[880px] items-center justify-between rounded-full border-2 bg-[#071A3D]/70 px-8 py-3 transition-colors hover:bg-[#0B2352]/80 sm:px-10"
-            style={{ borderColor: BLUE }}
-          >
-            <span className="text-3xl font-medium uppercase sm:text-[40px]" style={{ color: BLUE }}>
-              Get in touch
-            </span>
-            <span
-              className="flex h-12 w-24 items-center justify-center rounded-full border-2 sm:w-32"
-              style={{ borderColor: BLUE, color: BLUE }}
-            >
-              <svg viewBox="0 0 48 24" className="h-6 w-10" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 12h38M32 4l10 8-10 8" />
-              </svg>
-            </span>
-          </Link>
-        </div>
-      </section>
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M4 12h38M32 4l10 8-10 8" />
+        </svg>
+      </span>
+    </Link>
+  </div>
+</section>
     </div>
   );
 }

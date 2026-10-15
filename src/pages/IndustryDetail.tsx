@@ -48,7 +48,7 @@ export default function IndustryDetailPage() {
             <p className="mt-5 text-sm text-slate-700">
               Business Vision frames {industryModel.name.toLowerCase()} work around practical transformation priorities, relevant data and AI capabilities, and adoption controls suited to enterprise environments.
             </p>
-            <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
               <article className="rounded-2xl border border-slate-200 bg-white p-4">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Typical challenge patterns

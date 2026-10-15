@@ -251,7 +251,7 @@ export default function SolutionsPage() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {offerArchitecture.map((item, index) => (
               <article key={item.title} className="flex flex-col items-center text-center">
                 <div className="relative flex h-[155px] w-[155px] items-center justify-center rounded-full border-[1.5px] border-[#1d5bff] bg-[radial-gradient(circle_at_center,rgba(29,91,255,0.10),transparent_62%)] text-[#1d5bff]">
@@ -284,7 +284,7 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {solutionCards.map((card) => (
               <article
                 key={card.name}
@@ -321,7 +321,7 @@ export default function SolutionsPage() {
       </section>
 
       <section className="bg-white py-16 md:py-20">
-        <div className="container-x grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-6">
+        <div className="container-x grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-6">
           <div>
             <p className="text-lg font-medium uppercase text-[#1d5bff] md:text-xl">Industry Relevance</p>
             <h2 className="mt-3 max-w-md text-3xl font-bold uppercase leading-tight text-black md:text-[2.1rem] md:leading-[1.35]">
@@ -334,7 +334,7 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <ul className={`grid grid-cols-2 gap-3 sm:grid-cols-2 ${OPEN_SANS}`}>
+          <ul className={`grid grid-cols-1 gap-3 sm:grid-cols-2 ${OPEN_SANS}`}>
   {industries.map((industry) => {
     const spanTwo = industry === "Food and Beverage";
 
@@ -342,13 +342,24 @@ export default function SolutionsPage() {
       <li
         key={industry}
         className={`flex min-h-[56px] items-center justify-center gap-2.5 rounded-md border border-slate-100 bg-[#f8f9fc] px-4 py-3 text-center text-base font-medium text-slate-600 sm:text-lg ${
-          spanTwo ? "col-span-2" : ""
+          spanTwo ? "sm:col-span-2" : ""
         }`}
       >
         <span className="shrink-0 text-[#1d5bff]">
           <SparkleIcon />
         </span>
-        {industry}
+        <span className="min-w-0 break-words">
+          {/* wbr gives a clean break after "Tele" on narrow screens without forcing a visible hyphen */}
+          {industry === "Telecommunications" ? (
+            <>
+              Tele
+              <wbr />
+              communications
+            </>
+          ) : (
+            industry
+          )}
+        </span>
       </li>
     );
   })}

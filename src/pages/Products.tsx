@@ -230,7 +230,7 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
             </p>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-[1300px] gap-6 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid grid-cols-1 max-w-[1300px] gap-6 lg:grid-cols-3">
             {approvedProducts.map((product) => {
               const { Icon, accent } = getProductMeta(product.slug, product.name);
               return (
@@ -241,8 +241,10 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
                 >
                   <div className="flex items-center gap-5">
                     <Icon />
-                    <div>
-                      <h3 className="text-[32px] font-semibold leading-tight text-black">{product.name}</h3>
+                    <div className="min-w-0">
+                      <h3 className="break-words text-2xl font-semibold leading-tight text-black sm:text-[32px]">
+                        {product.name}
+                      </h3>
                       <p className="mt-1 text-lg font-normal" style={{ color: accent }}>
                         {product.categoryLabel}
                       </p>
@@ -362,7 +364,7 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
             </h2>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-[1300px] gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-10 grid grid-cols-1 max-w-[1300px] gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {whyCards.map(({ Icon, title, text }) => (
               <article
                 key={title}

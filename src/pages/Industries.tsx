@@ -269,7 +269,7 @@ export default function IndustriesPage() {
       {/* ============ Stats bar (متداخل مع آخر الهيرو) ============ */}
       <section className="container-x relative z-10 -mt-24">
         <div
-          className="mx-auto grid max-w-[1300px] rounded-xl border-2 border-white/80 px-6 py-8 shadow-[0_8px_20px_rgba(0,0,0,0.35)] md:grid-cols-3"
+          className="mx-auto grid max-w-[1300px] grid-cols-1 rounded-xl border-2 border-white/80 px-6 py-8 shadow-[0_8px_20px_rgba(0,0,0,0.35)] md:grid-cols-3"
           style={{ backgroundColor: NAVY }}
         >
           {stats.map(({ value, label, Icon }) => (
@@ -359,7 +359,7 @@ export default function IndustriesPage() {
             </h2>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-[1300px] gap-y-10 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="mx-auto mt-12 grid grid-cols-1 max-w-[1300px] gap-y-10 sm:grid-cols-2 lg:grid-cols-6">
             {capabilities.map(({ title, text, Icon }) => (
               <div
                 key={title}

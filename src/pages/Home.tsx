@@ -58,12 +58,16 @@ const navItems: NavItem[] = [
 ]
 
 const clients: Client[] = [
-  { name: 'AstraZeneca', logo: '/clients/astrazeneca.png', width: 11.5 },
-  { name: 'Elsewedy Electric', logo: '/clients/elsewedy.png', width: 8.3 },
-  { name: 'stc', logo: '/clients/stc.png', width: 8.5 },
-  { name: 'Ardic Developments', logo: '/clients/ardic.png', width: 12.5 },
-  { name: 'CrossWorkers', logo: '/clients/crossworkers.png', width: 10.8 },
-  { name: 'Telecom Egypt', logo: '/clients/te.png', width: 12.6 },
+  { name: 'Trusted partner 1', logo: '/images/LOGOS TRUSTED/1042569_0.jpeg-removebg-preview.png', width: 10 },
+  { name: 'Trusted partner 2', logo: '/images/LOGOS TRUSTED/638368516079219350_0-removebg-preview (1) 1.png', width: 10 },
+  { name: 'Trusted partner 3', logo: '/images/LOGOS TRUSTED/bilal coach 1.png', width: 10 },
+  { name: 'Trusted partner 4', logo: '/images/LOGOS TRUSTED/images__1_-removebg-preview (3) 1.png', width: 10 },
+  { name: 'Trusted partner 5', logo: '/images/LOGOS TRUSTED/images__1_-removebg-preview (3).png', width: 10 },
+  { name: 'Trusted partner 6', logo: '/images/LOGOS TRUSTED/images__2_-removebg-preview (2).png', width: 10 },
+  { name: 'Trusted partner 7', logo: '/images/LOGOS TRUSTED/images-removebg-preview (8).png', width: 10 },
+  { name: 'Trusted partner 8', logo: '/images/LOGOS TRUSTED/novo-logo-white.jpg.corpimgo-removebg-preview 1.png', width: 10 },
+  { name: 'Trusted partner 9', logo: '/images/LOGOS TRUSTED/P15QyJhA_400x400-removebg-preview.png', width: 10 },
+  { name: 'Trusted partner 10', logo: '/images/LOGOS TRUSTED/unnamed.png', width: 10 }
 ]
 
 const capabilities: Capability[] = [
@@ -522,21 +526,75 @@ function Hero() {
 // ---------- TrustedBy ----------
 function TrustedBy() {
   return (
-    <section className="trusted" aria-labelledby="trusted-title">
-      <h2 id="trusted-title" className="trusted__title">
-        Trusted by
-      </h2>
-      <ul className="trusted__list">
-        {clients.map((client) => (
-          <li
-            key={client.name}
-            style={{ '--w': `${client.width}vw` } as CSSProperties}
-            className="trusted__logo"
-          >
-            <img src={client.logo} alt={client.name} loading="lazy" />
-          </li>
-        ))}
-      </ul>
+    <section className="trusted" aria-label="Trusted partners">
+      <style>{`
+        .trusted {
+          min-height: 230px !important;
+          height: auto !important;
+          padding: 30px 0 !important;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+        }
+        .trusted__carousel {
+          width: 100%;
+          overflow: hidden;
+        }
+        .trusted__carousel .trusted__list {
+          display: flex;
+          flex-wrap: nowrap;
+          width: max-content;
+          align-items: center;
+          gap: 0;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          animation: trusted-scroll-right 40s linear infinite;
+        }
+        .trusted__carousel .trusted__logo {
+          box-sizing: border-box;
+          flex: 0 0 200px;
+          width: 200px;
+          height: 160px;
+          min-width: 200px;
+          padding: 16px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: visible;
+          margin: 0;
+        }
+        .trusted__carousel .trusted__logo img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          max-width: 160px;
+          max-height: 128px;
+          object-fit: contain;
+          object-position: center;
+          flex-shrink: 0;
+        }
+        @keyframes trusted-scroll-right {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .trusted__carousel .trusted__list { animation: none; }
+        }
+      `}</style>
+      <div className="trusted__carousel">
+        <ul className="trusted__list">
+          {[...clients, ...clients].map((client, index) => (
+            <li
+              key={`${client.name}-${index}`}
+              className="trusted__logo"
+              aria-hidden={index >= clients.length ? true : undefined}
+            >
+              <img src={client.logo} alt={index < clients.length ? client.name : ''} loading="eager" />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }
@@ -820,9 +878,9 @@ function CallToAction() {
       <div className="cta__content">
         <h2>READY TO TRANSFORM YOUR BUSINESS?</h2>
         <p>
-          Discover How Business Vision Can Help Your
+          Discover How Business Vision Can Help Your{" "}
           <br />
-          Organization Leverage Ai, Software, And Data For Long
+          Organization Leverage Ai, Software, And Data For Long{" "}
           <br />
           Term Success.
         </p>

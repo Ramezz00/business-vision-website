@@ -28,7 +28,7 @@ export default function ProductDetailPage() {
         }
       />
 
-      <section className="grid gap-5 lg:grid-cols-2">
+      <section className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         <article className="surface-card p-6">
           <p className="kicker">Business Problem</p>
           <h2 className="section-title mt-2 text-2xl text-slate-950">What this product helps clarify</h2>
@@ -54,7 +54,7 @@ export default function ProductDetailPage() {
         </article>
       </section>
 
-      <section className="grid gap-5 lg:grid-cols-2">
+      <section className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         <article className="surface-card p-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Core capabilities</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
@@ -72,7 +72,7 @@ export default function ProductDetailPage() {
         </article>
       </section>
 
-      <section className="grid gap-5 lg:grid-cols-2">
+      <section className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         <article className="surface-card p-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Operating fit</h2>
           <p className="mt-3 text-sm text-slate-700">

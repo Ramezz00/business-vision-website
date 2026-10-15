@@ -145,7 +145,7 @@ export default function AboutPage() {
               Building Intelligent Enterprises
             </span>
             <span className="mt-2 block uppercase" style={{ color: "#4AA8E0" }}>
-              Through Technology&amp; AI
+              Through Technology &amp; AI
             </span>
           </>
         }
@@ -171,7 +171,7 @@ export default function AboutPage() {
 
       {/* ============ Who we are ============ */}
       <section id="who-we-are" className="bg-white py-16">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-2">
+        <div className="container-x grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="text-xl font-medium uppercase" style={{ color: BLUE }}>
               Who we are
@@ -197,7 +197,7 @@ export default function AboutPage() {
           {/* Collage: proportions follow the design; sizes use container units so it scales as one piece */}
           <div className="@container relative mx-auto aspect-[392/315] w-full max-w-[640px]">
             <div className="absolute right-0 top-[2.5%] h-[90%] w-[100%] overflow-hidden rounded-[1.2cqw] shadow-lg">
-              <img src="/Assets/Hand holding a luminous blue puzzle piece.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+              <img src="/images/business-vision-figma/hand-holding-blue-puzzle-piece.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
             {/* <div className="absolute bottom-[5.5%] left-0 aspect-video w-[54%] overflow-hidden rounded-[1.2cqw] shadow-lg">
               <img src="/images/about/ai-hand.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover" />
@@ -236,7 +236,7 @@ export default function AboutPage() {
           <p className="text-center text-xl font-semibold uppercase" style={{ color: BLUE }}>
             Delivering Measurable Business Value
           </p>
-          <div className="mx-auto mt-6 grid max-w-[1200px] md:grid-cols-3">
+          <div className="mx-auto mt-6 grid grid-cols-1 max-w-[1200px] md:grid-cols-3">
             {stats.map(({ value, label, Icon }) => (
               <div
                 key={label}
@@ -268,7 +268,7 @@ export default function AboutPage() {
             and the impact we strive to create for every organization we serve.
           </p>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
             <article className="rounded-2xl border-[3px] border-[#C9CCD3] border-b-[#1D4FFF] border-l-[#1D4FFF] bg-white p-6 shadow-md">
               <div className="flex items-center gap-4">
                 <div className="h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-[#2F5BFF] to-[#1236A8] p-3">
@@ -309,7 +309,7 @@ export default function AboutPage() {
 
       {/* ============ Management ============ */}
       {/* <section className="py-16" style={{ backgroundColor: DARK_BG }}>
-        <div className="container-x grid items-start gap-10 lg:grid-cols-[1fr_1.15fr]">
+        <div className="container-x grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1.15fr]">
           <div>
             <p className="text-xl font-medium uppercase" style={{ color: NUM_BLUE }}>
               Business Vision Management

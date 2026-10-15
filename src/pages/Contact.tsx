@@ -146,7 +146,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-6">
             {contactJourneys.map((track, index) => (
               <article
                 key={track.title}
@@ -186,7 +186,7 @@ export default function ContactPage() {
             <p className="mt-3 text-base text-slate-700 md:text-lg">Delivering business outcomes, not just technology</p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
             {approachItems.map((item) => (
               <article key={item.title} className="rounded-lg border border-slate-300 bg-white p-4 pb-6">
                 <div className="flex items-center gap-3">
@@ -209,7 +209,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-16 md:py-20">
-        <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="container-x grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-lg font-semibold uppercase text-[#1d5bff] md:text-xl">Frequently Asked Questions</h2>
             <p className={`mt-3 max-w-md text-base leading-relaxed text-slate-600 ${OPEN_SANS}`}>

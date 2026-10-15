@@ -18,7 +18,7 @@ export function PageHero({ eyebrow, title, description, actions, imageSrc }: Pag
 
   return (
     <section
-      className="bv-hero relative bg-cover bg-center pb-40 pt-52 text-white"
+      className="bv-hero relative bg-top bg-no-repeat bg-contain pb-40 pt-52 text-white sm:bg-cover sm:bg-center"
       style={{ backgroundImage: layers }}
     >
       <div className="container-x">

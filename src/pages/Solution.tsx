@@ -314,6 +314,29 @@ export default function SolutionsPage() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Placeholder only: no destination is connected yet. */}
+                {/* <button
+                  type="button"
+                  disabled
+                  title="More information coming soon"
+                  className="mt-auto inline-flex w-fit items-center gap-3 pt-6 text-sm font-medium uppercase tracking-wide text-[#1d5bff] disabled:cursor-default"
+                >
+                  Read More
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h16M13 5l7 7-7 7" />
+                  </svg>
+                </button> */}
               </article>
             ))}
           </div>

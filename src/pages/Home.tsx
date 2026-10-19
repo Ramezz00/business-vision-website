@@ -654,9 +654,9 @@ function Solutions() {
               <img className="solution__icon" src={item.icon} alt="" />
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <Link to={item.href} className="solution__link">
+              {/* <Link to={item.href} className="solution__link">
                 READ MORE <ArrowRight size={14} />
-              </Link>
+              </Link> */}
             </li>
           ))}
         </ul>
@@ -796,17 +796,17 @@ function Products() {
             </span>
             <h3>{item.name}</h3>
             <p>{item.description}</p>
-            <a href={item.href} className="product__link" onClick={(e) => e.preventDefault()}>
+            {/* <a href={item.href} className="product__link" onClick={(e) => e.preventDefault()}>
               Learn More <ArrowRight size={13} />
-            </a>
+            </a> */}
           </li>
         ))}
       </ul>
 
-      <Link to="/products" className="products__all">
+      {/* <Link to="/products" className="products__all">
         <span>View Portfolio</span>
         <ArrowRight size={20} />
-      </Link>
+      </Link> */}
     </section>
   )
 }

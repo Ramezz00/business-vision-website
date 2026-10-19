@@ -332,14 +332,14 @@ export default function IndustriesPage() {
                 </ul>
 
                 <div className="mt-auto pt-8">
-                  <Link
+                  {/* <Link
                     to={`/industries/${slugFor(key)}`}
                     className="inline-flex items-center gap-3 text-[15px] font-normal uppercase hover:underline"
                     style={{ color: BLUE }}
                   >
                     View Solutions
                     <ArrowRight />
-                  </Link>
+                  </Link> */}
                 </div>
               </article>
             ))}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { PageHero } from "../components/PageHero";
 
@@ -258,54 +259,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============ Vision & Mission ============ */}
-      <section id="mission-vision" className="bg-white py-14">
-        <div className="container-x">
-          <p className="text-xl font-medium uppercase" style={{ color: BLUE }}>
-            Our Vision &amp; Mission
-          </p>
-          <p className="mt-3 text-xl font-normal uppercase leading-snug" style={{ color: GRAY_TEXT }}>
-            Guided by purpose and driven by innovation, our vision and mission define who we are, what we believe in,
-            and the impact we strive to create for every organization we serve.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <article className="rounded-2xl border-[3px] border-[#C9CCD3] border-b-[#1D4FFF] border-l-[#1D4FFF] bg-white p-6 shadow-md">
-              <div className="flex items-center gap-4">
-                <div className="h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-[#2F5BFF] to-[#1236A8] p-3">
-                  <VisionIcon />
-                </div>
-                <h3 className="text-[22px] font-semibold uppercase" style={{ color: BLUE }}>
-                  Our Vision
-                </h3>
-              </div>
-              <p className="mt-4 text-[15px] font-normal leading-relaxed" style={{ color: GRAY_TEXT }}>
-                To become a trusted global technology partner, empowering organizations to unlock the full potential of
-                data, artificial intelligence, and digital innovation. We envision a future where every business makes
-                confident, data-driven decisions, accelerates sustainable growth, and creates lasting value through
-                intelligent technology.
-              </p>
-            </article>
-
-            <article className="rounded-2xl border-[3px] border-[#C9CCD3] border-r-[#1D4FFF] border-t-[#1D4FFF] bg-white p-6 shadow-md">
-              <div className="flex items-center gap-4">
-                <div className="h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-[#2F5BFF] to-[#1236A8] p-3">
-                  <RocketIcon />
-                </div>
-                <h3 className="text-[22px] font-semibold uppercase" style={{ color: BLUE }}>
-                  Our Mission
-                </h3>
-              </div>
-              <p className="mt-4 text-[15px] font-normal leading-relaxed" style={{ color: GRAY_TEXT }}>
-                Our mission is to help organizations transform complex challenges into measurable opportunities by
-                delivering innovative AI solutions, enterprise applications, business intelligence, and advanced
-                analytics. Through deep industry expertise, collaborative partnerships, and a commitment to excellence,
-                we enable our clients to improve efficiency, optimize performance, and achieve long-term success in an
-                ever-evolving digital world.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <VisionMission />
 
       {/* ============ Management ============ */}
       {/* <section className="py-16" style={{ backgroundColor: DARK_BG }}>
@@ -405,3 +359,137 @@ export default function AboutPage() {
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* Animated Vision & Mission section                                   */
+/* ------------------------------------------------------------------ */
+const TargetIcon = () => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="46" cy="54" r="36" />
+    <circle cx="46" cy="54" r="23" />
+    <circle cx="46" cy="54" r="8" fill="currentColor" stroke="none" />
+    <g className="vm__arrow">
+      <path d="M48 52 L82 18" />
+      <path d="M72 28 L80 14 L92 22 Z" fill="currentColor" />
+      <path d="M84 12 L90 6 M92 22 L98 16" />
+    </g>
+  </svg>
+);
+
+const ExplorerIcon = () => (
+  <svg viewBox="0 0 100 110" aria-hidden="true">
+    <path d="M32 18c0-8 8-12 18-12s18 4 18 12c0 2-2 4-4 4H36c-2 0-4-2-4-4z" fill="#4a4a4a" />
+    <circle cx="50" cy="32" r="15" fill="#f2f2f2" />
+    <g className="vm__binoc">
+      <circle cx="43" cy="32" r="6.5" fill="#29a9e0" stroke="#3a3a3a" strokeWidth="2.5" />
+      <circle cx="57" cy="32" r="6.5" fill="#29a9e0" stroke="#3a3a3a" strokeWidth="2.5" />
+    </g>
+    <path d="M24 70 L40 54 L50 72 L60 54 L76 70 L70 108 H30 Z" fill="#555" />
+    <path d="M42 54 L50 74 L58 54 Z" fill="#f5f5f5" />
+    <path d="M26 74 L20 52 L38 38" fill="none" stroke="#555" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M74 74 L80 52 L62 38" fill="none" stroke="#555" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const visionMissionItems = [
+  {
+    key: "mission",
+    title: "Mission",
+    icon: <TargetIcon />,
+    text: "Our mission is to help organizations transform complex challenges into measurable opportunities by delivering innovative AI solutions, enterprise applications, business intelligence, and advanced analytics. Through deep industry expertise, collaborative partnerships, and a commitment to excellence, we enable our clients to improve efficiency, optimize performance, and achieve long-term success in an ever-evolving digital world.",
+  },
+  {
+    key: "vision",
+    title: "Vision",
+    icon: <ExplorerIcon />,
+    text: "To become a trusted global technology partner, empowering organizations to unlock the full potential of data, artificial intelligence, and digital innovation. We envision a future where every business makes confident, data-driven decisions, accelerates sustainable growth, and creates lasting value through intelligent technology.",
+  },
+];
+
+function useVisionMissionInView() {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  return [ref, visible] as const;
+}
+
+function VisionMission() {
+  const [ref, visible] = useVisionMissionInView();
+  return (
+    <section id="mission-vision" ref={ref} className={`vm ${visible ? "vm--in" : ""}`} aria-labelledby="vm-title">
+      <style>{visionMissionCss}</style>
+      <div className="container-x">
+        <header className="vm__head">
+          <h2 id="vm-title" className="vm__eyebrow">OUR VISION &amp; MISSION</h2>
+          <p className="vm__lead">GUIDED BY PURPOSE AND DRIVEN BY INNOVATION, OUR VISION AND MISSION DEFINE WHO WE ARE, WHAT WE BELIEVE IN, AND THE IMPACT WE STRIVE TO CREATE FOR EVERY ORGANIZATION WE SERVE.</p>
+        </header>
+        <div className="vm__grid">
+          {visionMissionItems.map((item, i) => (
+            <div key={item.key} className={`vm__item vm__item--${item.key}`} style={{ "--i": i } as CSSProperties}>
+              <div className="vm__icon">{item.icon}</div>
+              <article className="vm__card">
+                <h3 className="vm__card-title">{item.title}</h3>
+                <p className="vm__text">{item.text}</p>
+                <span className="vm__dot vm__dot--blue" aria-hidden="true" />
+                <span className="vm__dot vm__dot--gray" aria-hidden="true" />
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const visionMissionCss = `
+.vm { --vm-blue: #1657ff; overflow: hidden; background: white; padding: 48px 0 85px; font-family: var(--font-poppins), Poppins, system-ui, sans-serif; }
+.vm__head { max-width: 1280px; }
+.vm__eyebrow { color: var(--vm-blue); font-weight: 600; font-size: clamp(17px, 1.8vw, 22px); margin: 0 0 8px; }
+.vm__lead { margin: 0; color: #444; font-size: clamp(13px, 1.3vw, 16px); line-height: 1.7; }
+.vm__eyebrow,.vm__lead { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.vm--in .vm__eyebrow { opacity: 1; transform: none; }
+.vm--in .vm__lead { opacity: 1; transform: none; transition-delay: .12s; }
+.vm__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 55px; max-width: 720px; margin: 12px auto 0; align-items: start; }
+.vm__item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.vm__item--vision { margin-top: 36px; }
+.vm__icon { width: 64px; height: 64px; margin-bottom: 20px; color: #3a3a3a; opacity: 0; transform: scale(.5); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.6,.5,1); transition-delay: calc(var(--i) * .25s + .2s); }
+.vm__icon svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.vm--in .vm__icon { opacity: 1; transform: none; animation: vm-float 4.5s calc(var(--i) * .6s + 1.4s) ease-in-out infinite; }
+@keyframes vm-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+.vm__arrow { transform: translate(24px,-24px); opacity: 0; }
+.vm--in .vm__arrow { animation: vm-hit .6s .8s cubic-bezier(.2,1.4,.4,1) forwards; }
+@keyframes vm-hit { to { transform: none; opacity: 1; } }
+.vm__binoc { transform-box: fill-box; transform-origin: center; }
+.vm--in .vm__binoc { animation: vm-look 3.6s 1.2s ease-in-out infinite; }
+@keyframes vm-look { 0%,100% { transform: none; } 50% { transform: translateX(2px) scale(1.08); } }
+.vm__card { position: relative; width: 100%; min-height: 262px; padding: 30px 21px 25px; border: 3px solid var(--vm-blue); border-radius: 34px; background: #fff; text-align: center; opacity: 0; transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; transition-delay: calc(var(--i) * .2s + .25s); }
+.vm__item--mission .vm__card { transform: translateX(-50px); }
+.vm__item--vision .vm__card { transform: translateX(50px); }
+.vm--in .vm__card { opacity: 1; transform: none; }
+.vm--in .vm__card:hover { transform: translateY(-8px); box-shadow: 0 18px 32px rgba(29,91,255,.16); transition-delay: 0s; }
+.vm__card-title { position: absolute; top: 0; left: 50%; translate: -50% -50%; margin: 0; padding: 0 18px; background: white; color: var(--vm-blue); font-size: clamp(22px, 2.6vw, 28px); font-weight: 600; line-height: 1; white-space: nowrap; }
+.vm__text { margin: 0; color: #333; font-size: clamp(12px, 1.05vw, 14px); line-height: 1.55; }
+.vm__dot { position: absolute; width: 25px; height: 25px; border-radius: 50%; pointer-events: none; opacity: 0; transform: scale(0); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.6,.5,1); transition-delay: 1s; }
+.vm__dot--blue { top: -10px; right: -4px; background: rgba(160,220,255,.55); }
+.vm__dot--gray { bottom: -10px; left: -8px; background: rgba(120,120,120,.6); }
+.vm--in .vm__dot { opacity: 1; transform: none; animation: vm-pulse 3.2s 1.8s ease-in-out infinite; }
+.vm--in .vm__dot--gray { animation-delay: 2.6s; }
+@keyframes vm-pulse { 0%,100% { scale: 1; } 50% { scale: 1.18; } }
+@media (max-width: 700px) { .vm { padding: 48px 0 75px; } .vm__grid { grid-template-columns: 1fr; gap: 45px; margin-top: 34px; max-width: 340px; } .vm__item--vision { margin-top: 0; } .vm__card { min-height: 0; padding: 40px 22px 35px; } .vm__text { font-size: 14px; } .vm__item--mission .vm__card,.vm__item--vision .vm__card { transform: translateY(40px); } .vm--in .vm__card { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .vm *, .vm *::before { animation: none !important; transition: none !important; } .vm__eyebrow,.vm__lead,.vm__icon,.vm__card,.vm__dot,.vm__arrow { opacity: 1 !important; transform: none !important; } }
+`;

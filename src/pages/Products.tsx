@@ -283,14 +283,14 @@ export default function ProductsPage() {  const approvedProducts = getPublicProd
 
                   {/* Detail pages are not linked yet; this stays inert until their content is ready */}
                   <div className="mt-auto flex justify-end pt-10 pr-6">
-                    <button
+                    {/* <button
                       type="button"
                       className="inline-flex cursor-pointer items-center gap-2 text-lg font-medium hover:underline"
                       style={{ color: accent }}
                     >
                       Open Product Detail
                       <ArrowRight />
-                    </button>
+                    </button> */}
                   </div>
                 </article>
               );

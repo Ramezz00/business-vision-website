@@ -3,12 +3,13 @@ import { Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { NotFound } from './components/NotFound'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Home, { Footer, Header } from './pages/Home'
+import Home, { Header } from './pages/Home'
 import Industries from './pages/Industries'
 import IndustryDetail from './pages/IndustryDetail'
 import ProductDetail from './pages/ProductDetail'
 import Products from './pages/Products'
 import Solutions from './pages/Solution'
+import { Footer } from "./components/Footer";
 
 function Layout() {
   const { pathname, hash } = useLocation()
